@@ -1,0 +1,11 @@
+# Ignore macOS system files
+.DS_Store
+.zsh_history
+.Library/
+.cache/
+.config/
+.local/
+.npm/
+.vscode/
+.idea/
+
