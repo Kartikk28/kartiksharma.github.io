@@ -1,4 +1,5 @@
 /* General Styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +17,7 @@ body {
 
 /* Top Banner */
 .top-banner {
-    background-color: #231351
+    background-color: #231351;
     color: white;
     text-align: center;
     padding: 15px;
@@ -70,7 +71,7 @@ nav ul li a:hover {
     height: 100vh;
     text-align: center;
     padding: 5% 10%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 20, 0.85);
 }
 
 /* Hero Content */
@@ -102,10 +103,17 @@ nav ul li a:hover {
 
 /* Hero Text */
 .hero-text {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: white;
     max-width: 800px;
+    position: relative; /* Keeps text stable */
+    min-height: 80px; /* Prevents movement when text animates */
 }
+
 
 /* Name Highlight */
 .highlight-name {
@@ -125,7 +133,7 @@ nav ul li a:hover {
 .hero-text p {
     font-size: 1.3rem;
     color: #ddd;
-    margin-top: 10px;
+    margin-top: 60px;
     line-height: 1.5;
 }
 
@@ -144,7 +152,7 @@ nav ul li a:hover {
 
 /* Hero Buttons */
 .hero-buttons {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -163,110 +171,187 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background: #ff00ff;
-    box-shadow: 0 0 15px #ff00ff;
+    background: #b3ff00;
+    box-shadow: 0 0 15px #b3ff00;
 }
 
-
-/* Sections */
-/* About Me Section */
-
-/* About Me Section */
+/* About Section */
 .about {
-    text-align: center;
-    padding: 80px 10%;
-   
-    border-radius: 12px;
-    background-color: #011419;
-    box-shadow: 0 0 25px rgba(0, 204, 255, 0.5);
-    position: relative;
-    overflow: hidden;
-    max-width: 1000px;
-    margin: auto;
-    font-size: medium;
-}
-
-/* Heading */
-.about h2 {
-    font-size: 3rem;
-    color: #00ccff;
-    text-shadow: 0 0 15px #00ccff;
-    margin-bottom: 30px;
-}
-
-/* Content Layout */
-.about-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* About Image */
-.about-image img {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 20px #00ccff;
-    transition: transform 0.3s ease-in-out;
-}
-
-.about-image img:hover {
-    transform: scale(1.05);
-}
-
-/* About Text */
-.about-text {
-    flex: 1;
-    font-size: 18px;
-    color: #ddd;
-    max-width: 500px;
-    line-height: 1.8;
+    justify-content: space-between; /* Moves heading to left, content to right */
     text-align: left;
-    padding: 20px;
-    background: rgba(10, 10, 40, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 204, 255, 0.4);
-    animation: fadeIn 1s ease-in-out;
+    padding: 100px 10%;
+    background: rgba(0, 0, 20, 0.85);
+    width: 100vw;
+    min-height: 50vh;
+}
+
+/* Left-Aligned Heading */
+.about h2 {
+    font-size: 3.5rem;
+    color: #00ccff;
+    text-shadow: 0 0 15px #00ccff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    flex: 1; /* Takes space on the left */
+    position: relative; /* Allows precise movement */
+    left: 10px; /* Moves text slightly to the right */
+    top: 0px; /* Moves text slightly up */
+ /* Aligns the heading properly */
+}
+
+/* About Content - Aligned to Right */
+.about-content {
+    flex: 2; /* Takes more space on the right */
+    max-width: 750px;
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 1.4rem;
+    padding: 20px 0;
 }
 
 /* Highlighted Text */
-.about-text .highlight {
+.about-content .highlight {
     color: #8cff00;
+    font-weight: bold;
+    text-shadow: 0 0 10px #8cff00;
+}
+
+/* Subtle Line Divider */
+.about-content::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #00ccff;
+    margin-top: 5px;
+}
+
+/* Profile Image - Right Aligned */
+
+
+/* Education Section */
+/* Education Section - Full Width */
+/* Education Section */
+/* Education Section - Split Layout */
+/* Education Section - Split Layout */
+.education {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    background: rgba(0, 0, 20, 0.95); /* Matches other sections */
+    width: 100vw; /* Ensures full width */
+    min-height: 60vh; /* Ensures proper section height */
+}
+
+/* Section Heading - Positioned to the Left */
+.education h2 {
+    font-size: 3.5rem;
+    color: #00ccff;
+    text-shadow: 0 0 15px #00ccff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    flex: 1; /* Takes space on the left */
+    position: relative; /* Allows precise movement */
+    left: 10px; /* Moves text slightly to the right */
+    top: 0px; 
+}/*}
+
+/* Education Content - Positioned to the Right */
+.education-content {
+    flex: 2; /* Takes more space on the right */
+    max-width: 750px;
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 1.4rem;
+    padding: 20px 0;
+}
+
+/* Education Box */
+
+
+/* Hover Effect */
+
+
+/* Education Title */
+.education-box h3 {
+    font-size: 2rem;
+    color: #00ccff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px #00ccff;
+}
+
+/* Degree Title */
+.education-box h4.degree {
+    font-size: 1.6rem;
+    color: #b3ff00;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* Education Details */
+.education-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* List Items */
+.education-box ul li {
+    font-size: 1.3rem;
+    color: #ddd;
+    padding: 7px 0;
+    font-weight: 500;
+}
+
+/* Bullet Point Style */
+.education-box ul li::before {
+    content: "➤";
+    color: #00ccff;
+    margin-right: 12px;
+    font-size: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .education {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .education h2 {
+        left: 0;
+        top: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .education-content {
+        width: 90%;
+        text-align: center;
     }
 }
+
 
 /* Skills Section */
 .skills {
     text-align: center;
     padding: 80px 10%;
-    background: #011419;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0, 204, 255, 0.5);
-    max-width: 1000px;
-    margin: auto;
+    background: rgba(0, 0, 20, 0.9); /* Matches previous sections */
+    width: 100vw; /* Ensures full width */
+  
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
+    border-radius: 0; /* Removes any unwanted rounding */
 }
+
 
 /* Section Heading */
 .skills h2 {
     font-size: 3rem;
     color: #00ccff;
-    text-shadow: 0 0 20px #00ccff;
+    text-shadow: 0 0 10px #00ccff;
     margin-bottom: 30px;
 }
 
@@ -275,8 +360,8 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    max-width: 900px;
+    gap: 35px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -294,7 +379,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 180px;
+    min-width: 220px;
     min-height: 70px;
 }
 
@@ -316,20 +401,20 @@ nav ul li a:hover {
 .projects {
     text-align: center;
     padding: 80px 10%;
-    background: #011419; /* Matches "Technical Skills" */
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0, 204, 255, 0.5);
-    max-width: 1000px; /* Same as Technical Skills */
-    margin: auto;
+    background: rgba(0, 0, 20, 0.9); /* Matches previous sections */
+    width: 100vw; /* Ensures full width */
+  
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
+    border-radius: 0; /
 }
 
 /* Section Heading */
 .projects h2 {
     font-size: 2.8rem; /* Slightly reduced to match Skills */
     color: #00ccff;
-    text-shadow: 0 0 20px #00ccff;
+    text-shadow: 0 0 10px #00ccff;
     margin-bottom: 30px;
 }
 
@@ -432,11 +517,19 @@ nav ul li a:hover {
 .experience {
     text-align: center;
     padding: 60px 10%;
-    font-size: 2.8rem; /* Slightly reduced to match Skills */
+    font-size: 2.0rem; /* Slightly reduced to match Skills */
     color: #00ccff;;
-    text-shadow: 0 0 20px #00ccff;;
+    text-shadow: 0 0 2.5px #00ccff;;
     margin-bottom: 30px;
-
+    text-align: center;
+    padding: 80px 10%;
+    background: rgba(0, 0, 20, 0.9); /* Matches previous sections */
+    width: 100vw; /* Ensures full width */
+  
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0; /
 }
 
 .experience-container {
@@ -458,7 +551,7 @@ nav ul li a:hover {
 
 .exp-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+    box-shadow: 0 0 50px rgba(0, 204, 255, 0.5);
 }
 
 .exp-header {
@@ -488,7 +581,7 @@ nav ul li a:hover {
 
 h4 {
     font-size: 20px;
-    color: #ffffff;
+    color: #b3ff00;
     margin-bottom: 10px;
 }
 
@@ -513,16 +606,17 @@ ul li::before {
 /* Contact Section */
 .contact {
     text-align: center;
-    padding: 60px 10%;
-  /* Matches other sections */
-    border-radius: 12px;
-   
-    max-width: 800px;
-    margin: auto;
+    padding: 80px 10%;
+    background: rgba(0, 0, 20, 0.95); /* Matches other sections */
+    width: 100vw; /* Ensures full width */
+    min-height: 50vh; /* Provides enough height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
 }
-
 /* Contact Heading */
 .contact h2 {
     font-size: 3rem;
