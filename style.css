@@ -376,14 +376,7 @@ nav ul li a:hover {
 }
 
 /* Education Box */
-.education-box {
-    background: rgba(255, 255, 255, 0.75);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: 0.3s;
-    text-align: left;
-}
+
 
 /* Hover Effect */
 .education-box:hover {
