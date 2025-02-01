@@ -195,7 +195,7 @@ nav ul li a:hover {
     min-height: 80px;}
     @media (max-width: 768px) {
         .hero-text {
-            margin-top: 550px; /* ✅ Moves text up on iPhone 12 Pro */
+            margin-top: 600px; /* ✅ Moves text up on iPhone 12 Pro */
         }
     }
      /* Prevents movement when text animates */
@@ -303,7 +303,7 @@ nav ul li a:hover {
 .about h2 {
     font-size: 3.5rem;
     color: #00ccff;
-    text-shadow: 0 0 15px #00ccff;
+ 
     margin-bottom: 10px;
     letter-spacing: 1px;
     flex: 1; /* Takes space on the left */
@@ -351,7 +351,7 @@ nav ul li a:hover {
 .education h2 {
     font-size: 3.5rem;
     color: #00ccff;
-    text-shadow: 0 0 15px #00ccff;
+  
     margin-bottom: 20px;
     letter-spacing: 1px;
     flex: 1;
@@ -471,7 +471,7 @@ nav ul li a:hover {
 .skills h2 {
     font-size: 3rem;
     color: #00ccff;
-    text-shadow: 0 0 10px #00ccff;
+ 
     margin-bottom: 30px;
 }
 
@@ -548,7 +548,7 @@ nav ul li a:hover {
 .projects h2 {
     font-size: 2.8rem; /* Slightly reduced to match Skills */
     color: #00ccff;
-    text-shadow: 0 0 10px #00ccff;
+
     margin-bottom: 30px;
 }
 
@@ -647,7 +647,7 @@ nav ul li a:hover {
     padding: 80px 10%;
     font-size: 2rem;
     color: #00ccff;
-    text-shadow: 0 0 0.1px #00ccff;
+   
     margin-bottom: 30px;
     background: rgba(0, 0, 20, 0.75);
     width: 100vw;
