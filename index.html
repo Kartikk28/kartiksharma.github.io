@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Top Banner -->
-    <div class="top-banner">
-        <p>Exploring the universe of technology.</p>
-    </div>
+   
+
 
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <img src="logo_.png" alt="Kartik Sharma">
+            <img src="Logo_.png" alt="Kartik Sharma">
             <span>Kartik Sharma</span>
         </div>
         <ul>
@@ -91,7 +91,7 @@
             </ul>
         </div>
 
-    </div>
+ 
 </section>
 
 
@@ -261,6 +261,16 @@
         }
 
         typeEffect();
+   
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector("nav ul");
+    
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active"); // Toggles menu visibility
+            });
+        });
     </script>
+    
 </body>
 </html>
