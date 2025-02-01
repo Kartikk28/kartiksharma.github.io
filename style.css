@@ -16,13 +16,7 @@ body {
 }
 
 /* Top Banner */
-.top-banner {
-    background-color: rgba(0, 0, 20, 0.85);
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-}
+
 
 /* Navbar */
 nav {
@@ -30,48 +24,135 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(10, 10, 30, 0.9);
+    background: rgba(10, 10, 30, 0.75);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        padding: 5px 0px; /* ✅ Slightly increases padding */
+        height: 55px; /* ✅ Ensures navbar doesn’t shrink too much */
+        margin-bottom: 20px; /* ✅ Pushes content below navbar */
+    }
 }
 
+
+/* Logo */
 .logo img {
     height: 50px;
     border-radius: 50%;
 }
 
+/* Desktop Navbar */
 nav ul {
     list-style: none;
     display: flex;
     gap: 30px;
 }
 
+nav ul li {
+    display: inline-block;
+}
+
+/* Navbar Links */
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
     color: #00ccff;
 }
 
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        padding: 1px 0px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        display: none\;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 15px;
+        padding-top: 10px;
+        background: rgba(10, 10, 30, 0.75);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+
 /* Hero Section */
 /* Hero Section */
 /* Hero Section */
 .hero {
     display: flex;
+    flex-direction: column; /* Stacks elements properly on small screens */
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensures full viewport height */
     text-align: center;
-    padding: 5% 10%;
-    background: rgba(0, 0, 20, 0.85);
+    padding: 10% 5%; /* Adjust padding to avoid excessive spacing */
+    background: rgba(0, 0, 20, 0.75);}
+    @media (max-width: 768px) {
+        .hero {
+            padding-top: 80px; /* ✅ Pushes hero section down */
+        }
+    }
+    
+
+.hero h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+.profile-container {
+    position:absolute;
+    top: 100px;
+
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
 }
 
 /* Hero Content */
@@ -83,16 +164,14 @@ nav ul li a:hover {
 }
 
 /* Profile Image */
-.profile-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
+
 
 .profile-pic {
     width: 200%;
     max-width: 450px;
     border-radius: 50%;
+    position: relative;
+    margin-top: 80px;;
     box-shadow: 0 0 30px #00ccff;
     transition: transform 0.3s;
 }
@@ -103,6 +182,8 @@ nav ul li a:hover {
 
 /* Hero Text */
 .hero-text {
+    margin-top: 450px; /* Pushes text below the fixed profile pic */
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,8 +192,14 @@ nav ul li a:hover {
     color: white;
     max-width: 800px;
     position: relative; /* Keeps text stable */
-    min-height: 80px; /* Prevents movement when text animates */
-}
+    min-height: 80px;}
+    @media (max-width: 768px) {
+        .hero-text {
+            margin-top: 300px; /* ✅ Moves text up on iPhone 12 Pro */
+        }
+    }
+     /* Prevents movement when text animates */
+
 
 
 /* Name Highlight */
@@ -179,13 +266,38 @@ nav ul li a:hover {
 .about {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Moves heading to left, content to right */
+    justify-content: space-between;
     text-align: left;
     padding: 100px 10%;
-    background: rgba(0, 0, 20, 0.85);
+    background: rgba(0, 0, 20, 0.75);
     width: 100vw;
     min-height: 50vh;
 }
+
+/* Adjust Layout for Mobile */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack heading and content */
+        text-align: center; /* Center text */
+        padding: 50px 5%;
+    }
+
+    .about h2 {
+        font-size: 2.5rem; /* Reduce size for mobile */
+        text-align: center;
+        position: static; /* Remove position offset */
+        margin-bottom: 20px; /* Space between heading and content */
+        width: 100%;
+    }
+
+    .about-content {
+        flex: none; /* Reset flex */
+        max-width: 90%;
+        font-size: 1.2rem;
+    }
+}
+    
+
 
 /* Left-Aligned Heading */
 .about h2 {
@@ -219,49 +331,36 @@ nav ul li a:hover {
 }
 
 /* Subtle Line Divider */
-.about-content::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #00ccff;
-    margin-top: 5px;
-}
 
 /* Profile Image - Right Aligned */
 
 
 /* Education Section */
-/* Education Section - Full Width */
-/* Education Section */
-/* Education Section - Split Layout */
-/* Education Section - Split Layout */
+
 .education {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 80px 10%;
-    background: rgba(0, 0, 20, 0.95); /* Matches other sections */
-    width: 100vw; /* Ensures full width */
-    min-height: 60vh; /* Ensures proper section height */
+    background: rgba(0, 0, 20, 0.75);
+    width: 100vw;
+    min-height: 60vh;
 }
 
-/* Section Heading - Positioned to the Left */
+/* Education Section Title */
 .education h2 {
     font-size: 3.5rem;
     color: #00ccff;
     text-shadow: 0 0 15px #00ccff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
-    flex: 1; /* Takes space on the left */
-    position: relative; /* Allows precise movement */
-    left: 10px; /* Moves text slightly to the right */
-    top: 0px; 
-}/*}
+    flex: 1;
+    position: relative;
+}
 
-/* Education Content - Positioned to the Right */
+/* Education Content - Adjust for Desktop */
 .education-content {
-    flex: 2; /* Takes more space on the right */
+    flex: 2;
     max-width: 750px;
     color: #ddd;
     line-height: 1.6;
@@ -270,10 +369,20 @@ nav ul li a:hover {
 }
 
 /* Education Box */
-
+.education-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    text-align: left;
+}
 
 /* Hover Effect */
-
+.education-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
 
 /* Education Title */
 .education-box h3 {
@@ -319,33 +428,44 @@ nav ul li a:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 50px 5%;
     }
+
     .education h2 {
-        left: 0;
-        top: 0;
-        text-align: center;
-        margin-bottom: 20px;
+        font-size: 2.8rem;
+        margin-bottom: 15px;
     }
+
     .education-content {
         width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .education-box {
         text-align: center;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .education-box ul li {
+        text-align: left;
+        font-size: 1.2rem;
     }
 }
+
 
 
 /* Skills Section */
 .skills {
     text-align: center;
     padding: 80px 10%;
-    background: rgba(0, 0, 20, 0.9); /* Matches previous sections */
-    width: 100vw; /* Ensures full width */
-  
+    background: rgba(0, 0, 20, 0.75);
+    width: 100vw;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    border-radius: 0; /* Removes any unwanted rounding */
+    border-radius: 0;
 }
-
 
 /* Section Heading */
 .skills h2 {
@@ -357,12 +477,12 @@ nav ul li a:hover {
 
 /* Skills Container */
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    max-width: 900px;
     margin: auto;
+    justify-items: center;
 }
 
 /* Skill Card */
@@ -379,8 +499,8 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 220px;
-    min-height: 70px;
+    width: 220px;
+    height: 70px;
 }
 
 /* Hover Effect */
@@ -389,19 +509,33 @@ nav ul li a:hover {
     box-shadow: 0 0 20px #00ff99;
 }
 
-/* Responsive Grid */
+/* Responsive Grid for Mobile */
 @media (max-width: 768px) {
     .skills-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 }
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Stacks skills in one column */
+    }
+
+    .skill-card {
+        width: 90%;
+        height: auto;
+        padding: 12px 20px;
+        font-size: 20px;
+    }
+}
+
 
 /* Projects Section */
 .projects {
     text-align: center;
     padding: 80px 10%;
-    background: rgba(0, 0, 20, 0.9); /* Matches previous sections */
+    background: rgba(0, 0, 20, 0.75); /* Matches previous sections */
     width: 100vw; /* Ensures full width */
   
     margin: 0 auto;
@@ -506,59 +640,57 @@ nav ul li a:hover {
     .card {
         min-height: auto; /* Adjust height for mobile */
     }
-}
-
-
-
-
-
-
+}/* Experience Section */
 /* Experience Section */
 .experience {
     text-align: center;
-    padding: 60px 10%;
-    font-size: 2.0rem; /* Slightly reduced to match Skills */
-    color: #00ccff;;
-    text-shadow: 0 0 2.5px #00ccff;;
-    margin-bottom: 30px;
-    text-align: center;
     padding: 80px 10%;
-    background: rgba(0, 0, 20, 0.9); /* Matches previous sections */
-    width: 100vw; /* Ensures full width */
-  
+    font-size: 2rem;
+    color: #00ccff;
+    text-shadow: 0 0 2.5px #00ccff;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 20, 0.75);
+    width: 100vw;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    border-radius: 0; /
+    border-radius: 0;
 }
 
+/* Experience Container - Change grid to flex */
 .experience-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    display: flex; /* Change from grid to flex */
+    flex-direction: column; /* Stack cards vertically */
     align-items: center;
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
 }
 
+/* Experience Card */
 .exp-card {
-    background: #011419;
+    background: rgba(11, 3, 1, 0.75);
     padding: 20px;
     border-radius: 12px;
-    width: 80%;
+    width: 100%;
+    max-width: 600px;
     text-align: left;
     box-shadow: 0 0 15px rgba(0, 204, 255, 0.3);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
+/* Hover Effect */
 .exp-card:hover {
     transform: scale(1.03);
     box-shadow: 0 0 50px rgba(0, 204, 255, 0.5);
 }
 
+/* Experience Header */
 .exp-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .exp-header h3 {
@@ -572,6 +704,7 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+/* Location */
 .exp-location {
     font-size: 14px;
     font-style: italic;
@@ -579,12 +712,14 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+/* Job Title */
 h4 {
     font-size: 20px;
     color: #b3ff00;
     margin-bottom: 10px;
 }
 
+/* Job Responsibilities List */
 ul {
     list-style: none;
     padding-left: 0;
@@ -597,17 +732,49 @@ ul li {
     position: relative;
 }
 
+/* Bullet Point Icon */
 ul li::before {
     content: "➤";
     color: #00ccff;
     margin-right: 8px;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column; /* Keep stacked on mobile */
+    }
+
+    .exp-card {
+        width: 90%;
+    }
+
+    .exp-header h3 {
+        font-size: 22px;
+    }
+
+    .exp-date {
+        font-size: 14px;
+    }
+
+    .exp-location {
+        font-size: 13px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    ul li {
+        font-size: 15px;
+    }
+}
+
 /* Contact Section */
 .contact {
     text-align: center;
     padding: 80px 10%;
-    background: rgba(0, 0, 20, 0.95); /* Matches other sections */
+    background: rgba(0, 0, 20, 0.75); /* Matches other sections */
     width: 100vw; /* Ensures full width */
     min-height: 50vh; /* Provides enough height */
     display: flex;
@@ -677,4 +844,14 @@ ul li::before {
     font-size: 16px;
     color: white;
     box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 5% 5%;
+    }
+
+    .hero img {
+        width: 80%; /* Adjust image size for smaller screens */
+    }
 }
