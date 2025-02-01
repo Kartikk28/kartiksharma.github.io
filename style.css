@@ -14,6 +14,13 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+@media (max-width: 768px) {
+    body {
+        background: #000814 !important;  
+        background-image: none !important; 
+    }
+}
+
 
 /* Top Banner */
 
@@ -195,7 +202,7 @@ nav ul li a:hover {
     min-height: 80px;}
     @media (max-width: 768px) {
         .hero-text {
-            margin-top: 550px; /* ✅ Moves text up on iPhone 12 Pro */
+            margin-top: 500px; /* ✅ Moves text up on iPhone 12 Pro */
         }
     }
      /* Prevents movement when text animates */
