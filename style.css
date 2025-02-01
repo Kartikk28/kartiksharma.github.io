@@ -212,7 +212,12 @@ nav ul li a:hover {
 /* Name Highlight */
 .highlight-name {
     color: #00ccff;
-    text-shadow: 0 0 20px #00ccff;
+    text-shadow: 0 0 0.5
+        
+        
+        
+        
+        px #00ccff;
 }
 
 /* University Highlight */
@@ -220,7 +225,7 @@ nav ul li a:hover {
     font-size: 1.7rem;
     font-weight: bold;
     color: #ffcc00;
-    text-shadow: 0 0 15px #ffcc00;
+    text-shadow: 0 0 0.5px #ffcc00;
 }
 
 /* Paragraph Text */
@@ -241,7 +246,7 @@ nav ul li a:hover {
 .dynamic-text {
     color: #ff00ff;
     font-size: 2rem;
-    text-shadow: 0 0 15px #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
 }
 
 /* Hero Buttons */
@@ -334,7 +339,7 @@ nav ul li a:hover {
 .about-content .highlight {
     color: #8cff00;
     font-weight: bold;
-    text-shadow: 0 0 10px #8cff00;
+    text-shadow: 0 0 5px #8cff00;
 }
 
 /* Subtle Line Divider */
