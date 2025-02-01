@@ -195,7 +195,7 @@ nav ul li a:hover {
     min-height: 80px;}
     @media (max-width: 768px) {
         .hero-text {
-            margin-top: 300px; /* ✅ Moves text up on iPhone 12 Pro */
+            margin-top: 550px; /* ✅ Moves text up on iPhone 12 Pro */
         }
     }
      /* Prevents movement when text animates */
@@ -647,7 +647,7 @@ nav ul li a:hover {
     padding: 80px 10%;
     font-size: 2rem;
     color: #00ccff;
-    text-shadow: 0 0 2.5px #00ccff;
+    text-shadow: 0 0 0.1px #00ccff;
     margin-bottom: 30px;
     background: rgba(0, 0, 20, 0.75);
     width: 100vw;
