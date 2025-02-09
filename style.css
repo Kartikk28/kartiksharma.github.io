@@ -14,13 +14,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
-@media (max-width: 768px) {
-    body {
-        background: #000814 !important;  
-        background-image: none !important; 
-    }
-}
-
 
 /* Top Banner */
 
@@ -152,59 +145,63 @@ nav ul li a:hover {
 .hero h1 {
     font-size: clamp(1.5rem, 5vw, 2rem);
 }
+/* Profile Container */
 .profile-container {
-    position:absolute;
-    top: 100px;
-
-    width: 80%;
+    flex: 1;
     display: flex;
     justify-content: center;
-    z-index: 0;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Profile Video */
+.profile-video {
+    width: 550px; /* Adjusted size */
+    height: 650px;
+    border-radius: 30px; /* Slightly softer rounded corners */
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
 }
 
 /* Hero Content */
 .hero-content {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-
-/* Profile Image */
-
-
-.profile-pic {
-    width: 200%;
-    max-width: 450px;
-    border-radius: 50%;
-    position: relative;
-    margin-top: 80px;;
-    box-shadow: 0 0 30px #00ccff;
-    transition: transform 0.3s;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05);
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 10%;
 }
 
 /* Hero Text */
 .hero-text {
-    margin-top: 450px; /* Pushes text below the fixed profile pic */
-    min-height: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    position: relative; /* Keeps text stable */
-    min-height: 80px;}
-    @media (max-width: 768px) {
-        .hero-text {
-            margin-top: 400px; /* ✅ Moves text up on iPhone 12 Pro */
-        }
+    flex: 1;
+    text-align: left;
+}
+
+/* 🔹 Responsive Adjustments for iPhone 12 Pro & Small Screens */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack video & text */
+        text-align: center; /* Center align text */
+        padding: 20px; /* Reduce padding */
     }
+
+    .profile-video {
+        width: 80%; /* Adjust to screen size */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 350px; /* Prevent overflow */
+    }
+
+    .hero-text {
+        margin-top: 20px; /* Reduce excessive spacing */
+        font-size: 1.1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Resize heading for readability */
+    }
+}
+
      /* Prevents movement when text animates */
 
 
@@ -212,12 +209,7 @@ nav ul li a:hover {
 /* Name Highlight */
 .highlight-name {
     color: #00ccff;
-    text-shadow: 0 0 0.5
-        
-        
-        
-        
-        px #00ccff;
+    text-shadow: 0 0 20px #00ccff;
 }
 
 /* University Highlight */
@@ -225,7 +217,7 @@ nav ul li a:hover {
     font-size: 1.7rem;
     font-weight: bold;
     color: #ffcc00;
-    text-shadow: 0 0 0.5px #ffcc00;
+    text-shadow: 0 0 15px #ffcc00;
 }
 
 /* Paragraph Text */
@@ -246,7 +238,7 @@ nav ul li a:hover {
 .dynamic-text {
     color: #ff00ff;
     font-size: 2rem;
-    text-shadow: 0 0 5px #ff00ff;
+    text-shadow: 0 0 15px #ff00ff;
 }
 
 /* Hero Buttons */
@@ -339,7 +331,7 @@ nav ul li a:hover {
 .about-content .highlight {
     color: #8cff00;
     font-weight: bold;
-    text-shadow: 0 0 5px #8cff00;
+    text-shadow: 0 0 10px #8cff00;
 }
 
 /* Subtle Line Divider */
@@ -394,7 +386,7 @@ nav ul li a:hover {
     font-size: 2rem;
     color: #00ccff;
     margin-bottom: 10px;
-    text-shadow: 0 0 5px #00ccff;
+    text-shadow: 0 0 15px #00ccff;
 }
 
 /* Degree Title */
@@ -661,6 +653,12 @@ nav ul li a:hover {
     overflow: hidden;
     border-radius: 0;
 }
+@media (max-width: 768px) {
+    .experience {
+        background: rgba(0, 0, 20, 0.75); /* ✅ Completely removes transparency */
+    }
+}
+
 
 /* Experience Container - Change grid to flex */
 .experience-container {
